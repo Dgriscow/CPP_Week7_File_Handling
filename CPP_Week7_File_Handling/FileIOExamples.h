@@ -13,4 +13,8 @@ public:
 	void writeRandomDataArray();
 	void calcTotal();
 
+
+	void moreRandomArrays();
+	void newCalcTotals();
+
 };

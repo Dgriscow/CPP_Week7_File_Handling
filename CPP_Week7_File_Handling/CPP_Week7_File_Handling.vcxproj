@@ -146,6 +146,7 @@
     <Text Include="..\..\..\..\Downloads\sales.txt" />
     <Text Include="arrayT.txt" />
     <Text Include="myNumbers.txt" />
+    <Text Include="myRandomNumbers.txt" />
     <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>

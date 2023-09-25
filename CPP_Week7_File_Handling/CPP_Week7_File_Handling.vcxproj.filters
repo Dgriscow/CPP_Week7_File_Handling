@@ -35,6 +35,9 @@
     <Text Include="myNumbers.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="myRandomNumbers.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileIOExamples.h">

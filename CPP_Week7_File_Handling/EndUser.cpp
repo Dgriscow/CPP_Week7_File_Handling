@@ -10,9 +10,10 @@ int main() {
 	
 	//dataView.writeRandomDataArray();
 
-	dataView.calcTotal();
+	//dataView.calcTotal();
 
-
+	dataView.moreRandomArrays();
+	dataView.newCalcTotals();
 
 
 

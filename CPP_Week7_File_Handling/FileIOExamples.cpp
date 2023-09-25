@@ -210,3 +210,118 @@ void FileIOExamples::calcTotal()
 
 	inputFile.close();
 }
+
+void FileIOExamples::moreRandomArrays()
+{
+
+	//Random Number Generator Variables 
+
+	int maxValue=2000, minValue=1000;
+
+
+	ofstream outputFile;
+
+	string fileName; //name of the file desired to search
+
+	int i = 0, rNumber;
+
+
+
+	outputFile.open("myRandomNumbers.txt"); //open the file the user has said they want to open
+
+	//error Handling
+	if (!outputFile) {
+
+		cout << endl << "File Handling Error: " << fileName << " File Not Found\n";
+		exit(-1); //give the exit function a exit code, The error code number can be whatever you decide
+
+	}
+
+	//get input from the user
+	string outputText;
+
+	srand(time(0));
+
+	while (i < 20) {
+
+		//Generate A Random Number
+		rNumber = rand() % (maxValue - minValue + 1) + minValue;
+
+		cout << rNumber << endl;
+
+		outputFile << rNumber << "\n";
+
+		i++;
+
+	}
+
+	outputFile.close();
+}
+
+void FileIOExamples::newCalcTotals()
+{
+	ifstream inputFile;
+	ofstream outputFile;
+
+	string fileName = "myRandomNumbers.txt";
+
+	inputFile.open(fileName);
+
+	outputFile.open(fileName);
+
+	int myRN[20],myDRN[20];
+
+
+	//Error Checking 
+	if (!inputFile || !outputFile) {
+
+		cout << endl << "File Handling Error:" << fileName << "File Not Found\n";
+		exit(-1); //give the exit function a exit code, The error code number can be whatever you decide
+
+	}
+
+	int i = 0, total = 0;
+
+	//Array For Integers
+
+	while (i < 20) {
+
+		//Generate A Random Number
+
+		//Assign the current index of numbers read to the generated random number in the text file, according to the index
+		inputFile >> myRN[i];
+	
+
+		//Double the current Value of the number
+		int doubledRN = myRN[i] * 20;
+
+		myDRN[i] = doubledRN;
+
+		//running total 
+		total += doubledRN;
+
+		outputFile << doubledRN << endl;
+
+
+
+
+		i++;
+
+	}
+
+	//handle output 
+	double average = total / 20;
+
+	//output Average and total
+	outputFile << "Total: " << total << " Average is: " << average;
+
+	cout << "\nTotal Of the Random Numbers is: " << total << endl;
+
+	inputFile.close();
+	outputFile.close();
+
+
+
+
+
+}
